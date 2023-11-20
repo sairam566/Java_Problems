@@ -1,4 +1,4 @@
-package problems.set1;
+package problems.ch1.pro_1;
 
 import java.util.Arrays;
 import java.util.Collections;
