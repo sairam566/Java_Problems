@@ -5,7 +5,8 @@ public class StringContainOnlyNumbers {
 	private static final String SAMPLE = "123432k";
 	
 	public static void main(String[] args) {
-		boolean isDigit = containsOnlyDigits(SAMPLE);
+		//boolean isDigit = containsOnlyDigits(SAMPLE);
+		boolean isDigit = containsOnlyDigitsLambda(SAMPLE);
 		System.out.println("The given value : "+SAMPLE+" is "+((isDigit)?"a digit":"not a digit"));
 	}
 	
@@ -17,5 +18,10 @@ public class StringContainOnlyNumbers {
 			}
 		}
 		return true;
+	}
+	
+	//Lambda expression
+	public static boolean containsOnlyDigitsLambda(String value) {
+		return !value.chars().anyMatch(ch->!Character.isDigit(ch));
 	}
 }
