@@ -2,11 +2,12 @@ package problems.ch1.pro_4;
 
 public class StringContainOnlyNumbers {
 	
-	private static final String SAMPLE = "123432k";
+	private static final String SAMPLE = "123432";
 	
 	public static void main(String[] args) {
 		//boolean isDigit = containsOnlyDigits(SAMPLE);
-		boolean isDigit = containsOnlyDigitsLambda(SAMPLE);
+		//boolean isDigit = containsOnlyDigitsLambda(SAMPLE);
+		boolean isDigit = containsOnlyDigitsRegularExpression(SAMPLE);
 		System.out.println("The given value : "+SAMPLE+" is "+((isDigit)?"a digit":"not a digit"));
 	}
 	
@@ -23,5 +24,10 @@ public class StringContainOnlyNumbers {
 	//Lambda expression
 	public static boolean containsOnlyDigitsLambda(String value) {
 		return !value.chars().anyMatch(ch->!Character.isDigit(ch));
+	}
+	
+	//Regular Expression
+	public static boolean containsOnlyDigitsRegularExpression(String value) {
+		return value.matches("[0-9]+");
 	}
 }
